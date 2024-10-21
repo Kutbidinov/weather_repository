@@ -9,4 +9,6 @@ class CityForm(ModelForm):
         widgets = {'name': TextInput(attrs={'class': 'form-control', 'name': 'city', 'id': 'city',
                                             'placeholder': 'Введите город',
 
+
+
                                             })}

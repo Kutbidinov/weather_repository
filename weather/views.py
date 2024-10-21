@@ -1,3 +1,4 @@
+
 import requests
 from django.shortcuts import render
 from .models import City
@@ -30,6 +31,7 @@ def index(request):
                 'temp': res['main'].get('temp', 'Неизвестная температура'),
                 'icon': res['weather'][0].get('icon', 'нет иконки'),
             }
+
         else:
             city_info = {
                 'city': city.name,
@@ -37,6 +39,8 @@ def index(request):
             }
 
         all_cities.append(city_info)
+        print("Вы ввели неправильный Город! Убедитесь в правильности написания Города")
+
 
     context = {
         'all_info': all_cities,
